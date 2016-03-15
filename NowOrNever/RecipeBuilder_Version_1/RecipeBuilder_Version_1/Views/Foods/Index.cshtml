@@ -1,0 +1,58 @@
+﻿@model IEnumerable<RecipeBuilder_Version_1.Models.Food>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FoodName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Specification)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IndividualAsPurchasedWeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YieldPercentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PotentiallyHazardous)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FoodName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Specification)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IndividualAsPurchasedWeight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YieldPercentage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PotentiallyHazardous)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FoodID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FoodID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FoodID })
+        </td>
+    </tr>
+}
+
+</table>

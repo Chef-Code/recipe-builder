@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeBuilder_Version_1", "RecipeBuilder_Version_1\RecipeBuilder_Version_1.csproj", "{A7F1DFEB-8CDD-40FF-B58F-64E0310EB3CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecipeBuilder_Version_1.Tests", "RecipeBuilder_Version_1.Tests\RecipeBuilder_Version_1.Tests.csproj", "{DDA2E576-81A5-4694-BF0A-EA5544AADD7F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7F1DFEB-8CDD-40FF-B58F-64E0310EB3CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7F1DFEB-8CDD-40FF-B58F-64E0310EB3CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7F1DFEB-8CDD-40FF-B58F-64E0310EB3CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7F1DFEB-8CDD-40FF-B58F-64E0310EB3CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDA2E576-81A5-4694-BF0A-EA5544AADD7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDA2E576-81A5-4694-BF0A-EA5544AADD7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDA2E576-81A5-4694-BF0A-EA5544AADD7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDA2E576-81A5-4694-BF0A-EA5544AADD7F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

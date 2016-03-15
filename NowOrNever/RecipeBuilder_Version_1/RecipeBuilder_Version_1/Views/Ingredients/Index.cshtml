@@ -1,0 +1,66 @@
+﻿@model PagedList.IPagedList<RecipeBuilder_Version_1.Models.Ingredient>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Ingredients";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ingredients</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm("Index", "Ingredients", FormMethod.Get))
+{
+    <p>
+        Find by name: @Html.TextBox("searchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Ingredient Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.ActionLink("Type of Food", "Index", new { sortOrder = ViewBag.FoodSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            Unit Quantity
+        </th>
+        <th>
+            Preparation
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IngredientName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Food.FoodName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitQuantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Preparation)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IngredientID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IngredientID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IngredientID })
+        </td>
+    </tr>
+}
+
+</table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
